@@ -1,0 +1,744 @@
+Script started on Fri Apr 18 18:35:34 2014
+altair - kfosmire - 03 > cat parta.pl
+/*
+Keith Fosmire
+Assignment 3 Part A
+Due 18 April 2014
+
+Used Dr.Odendahl's format from football
+
+sent==sentence
+np==noun phrase
+vp==verb phrase
+det==determiner
+
+*/
+sent --> np, vp.
+
+np --> det, noun.
+vp --> verb, op.
+op --> det, obj.
+
+obj --> noun.
+
+det --> [the].
+det --> [a].
+det --> [that].
+det --> [this].
+det --> [that].
+det --> [them].
+
+noun --> ['Ape'].
+noun --> ['Monkey'].
+noun --> ['Human'].
+noun --> ['Pig'].
+
+verb --> [taught].
+verb --> [corrected].
+verb --> ['trained'].
+altair - kfosmire - 03 > pl
+Welcome to SWI-Prolog (Multi-threaded, Version 5.6.24)
+Copyright (c) 1990-2006 University of Amsterdam.
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software,
+and you are welcome to redistribute it under certain conditions.
+Please visit http://www.swi-prolog.org for details.
+
+For help, use ?- help(Topic). or ?- apropos(Word).
+
+[?1034h?- [parta].
+% parta compiled 0.00 sec, 4,008 bytes
+
+Yes
+?- phrase(sent,X,[])?- phrase(sent,X,[]).
+
+X = [the, 'Ape', taught, the, 'Ape'] ;
+
+X = [the, 'Ape', taught, the, 'Monkey'] ;
+
+X = [the, 'Ape', taught, the, 'Human'] ;
+
+X = [the, 'Ape', taught, the, 'Pig'] ;
+
+X = [the, 'Ape', taught, a, 'Ape'] ;
+
+X = [the, 'Ape', taught, a, 'Monkey'] ;
+
+X = [the, 'Ape', taught, a, 'Human'] ;
+
+X = [the, 'Ape', taught, a, 'Pig'] ;
+
+X = [the, 'Ape', taught, that, 'Ape'] ;
+
+X = [the, 'Ape', taught, that, 'Monkey'] ;
+
+X = [the, 'Ape', taught, that, 'Human'] ;
+
+X = [the, 'Ape', taught, that, 'Pig'] ;
+
+X = [the, 'Ape', taught, this, 'Ape'] ;
+
+X = [the, 'Ape', taught, this, 'Monkey'] ;
+
+X = [the, 'Ape', taught, this, 'Human'] ;
+
+X = [the, 'Ape', taught, this, 'Pig'] ;
+
+X = [the, 'Ape', taught, that, 'Ape'] ;
+
+X = [the, 'Ape', taught, that, 'Monkey'] ;
+
+X = [the, 'Ape', taught, that, 'Human'] ;
+
+X = [the, 'Ape', taught, that, 'Pig'] ;
+
+X = [the, 'Ape', taught, them, 'Ape'] ;
+
+X = [the, 'Ape', taught, them, 'Monkey'] ;
+
+X = [the, 'Ape', taught, them, 'Human'] ;
+
+X = [the, 'Ape', taught, them, 'Pig'] ;
+
+X = [the, 'Ape', corrected, the, 'Ape'] ;
+
+X = [the, 'Ape', corrected, the, 'Monkey'] ;
+
+X = [the, 'Ape', corrected, the, 'Human'] ;
+
+X = [the, 'Ape', corrected, the, 'Pig'] ;
+
+X = [the, 'Ape', corrected, a, 'Ape'] ;
+
+X = [the, 'Ape', corrected, a, 'Monkey'] ;
+
+X = [the, 'Ape', corrected, a, 'Human'] ;
+
+X = [the, 'Ape', corrected, a, 'Pig'] ;
+
+X = [the, 'Ape', corrected, that, 'Ape'] ;
+
+X = [the, 'Ape', corrected, that, 'Monkey'] ;
+
+X = [the, 'Ape', corrected, that, 'Human'] ;
+
+X = [the, 'Ape', corrected, that, 'Pig'] ;
+
+X = [the, 'Ape', corrected, this, 'Ape'] ;
+
+X = [the, 'Ape', corrected, this, 'Monkey'] ;
+
+X = [the, 'Ape', corrected, this, 'Human'] ;
+
+X = [the, 'Ape', corrected, this, 'Pig'] ;
+
+X = [the, 'Ape', corrected, that, 'Ape'] ;
+
+X = [the, 'Ape', corrected, that, 'Monkey'] ;
+
+X = [the, 'Ape', corrected, that, 'Human'] ;
+
+X = [the, 'Ape', corrected, that, 'Pig'] ;
+
+X = [the, 'Ape', corrected, them, 'Ape'] ;
+
+X = [the, 'Ape', corrected, them, 'Monkey'] ;
+
+X = [the, 'Ape', corrected, them, 'Human'] ;
+
+X = [the, 'Ape', corrected, them, 'Pig'] ;
+
+X = [the, 'Ape', trained, the, 'Ape'] ;
+
+X = [the, 'Ape', trained, the, 'Monkey'] ;
+
+X = [the, 'Ape', trained, the, 'Human'] ;
+
+X = [the, 'Ape', trained, the, 'Pig'] ;
+
+X = [the, 'Ape', trained, a, 'Ape'] ;
+
+X = [the, 'Ape', trained, a, 'Monkey'] ;
+
+X = [the, 'Ape', trained, a, 'Human'] ;
+
+X = [the, 'Ape', trained, a, 'Pig'] ;
+
+X = [the, 'Ape', trained, that, 'Ape'] ;
+
+X = [the, 'Ape', trained, that, 'Monkey'] ;
+
+X = [the, 'Ape', trained, that, 'Human'] ;
+
+X = [the, 'Ape', trained, that, 'Pig'] ;
+
+X = [the, 'Ape', trained, this, 'Ape'] ;
+
+X = [the, 'Ape', trained, this, 'Monkey'] ;
+
+X = [the, 'Ape', trained, this, 'Human'] ;
+
+X = [the, 'Ape', trained, this, 'Pig'] ;
+
+X = [the, 'Ape', trained, that, 'Ape'] ;
+
+X = [the, 'Ape', trained, that, 'Monkey'] ;
+
+X = [the, 'Ape', trained, that, 'Human'] ;
+
+X = [the, 'Ape', trained, that, 'Pig'] ;
+
+X = [the, 'Ape', trained, them, 'Ape'] ;
+
+X = [the, 'Ape', trained, them, 'Monkey'] ;
+
+X = [the, 'Ape', trained, them, 'Human'] ;
+
+X = [the, 'Ape', trained, them, 'Pig'] ;
+
+X = [the, 'Monkey', taught, the, 'Ape'] ;
+
+X = [the, 'Monkey', taught, the, 'Monkey'] ;
+
+X = [the, 'Monkey', taught, the, 'Human'] ;
+
+X = [the, 'Monkey', taught, the, 'Pig'] ;
+
+X = [the, 'Monkey', taught, a, 'Ape'] ;
+
+X = [the, 'Monkey', taught, a, 'Monkey'] ;
+
+X = [the, 'Monkey', taught, a, 'Human'] ;
+
+X = [the, 'Monkey', taught, a, 'Pig'] ;
+
+X = [the, 'Monkey', taught, that, 'Ape'] ;
+
+X = [the, 'Monkey', taught, that, 'Monkey'] ;
+
+X = [the, 'Monkey', taught, that, 'Human'] ;
+
+X = [the, 'Monkey', taught, that, 'Pig'] ;
+
+X = [the, 'Monkey', taught, this, 'Ape'] ;
+
+X = [the, 'Monkey', taught, this, 'Monkey'] ;
+
+X = [the, 'Monkey', taught, this, 'Human'] ;
+
+X = [the, 'Monkey', taught, this, 'Pig'] ;
+
+X = [the, 'Monkey', taught, that, 'Ape'] ;
+
+X = [the, 'Monkey', taught, that, 'Monkey'] ;
+
+X = [the, 'Monkey', taught, that, 'Human'] ;
+
+X = [the, 'Monkey', taught, that, 'Pig'] ;
+
+X = [the, 'Monkey', taught, them, 'Ape'] ;
+
+X = [the, 'Monkey', taught, them, 'Monkey'] ;
+
+X = [the, 'Monkey', taught, them, 'Human'] ;
+
+X = [the, 'Monkey', taught, them, 'Pig'] ;
+
+X = [the, 'Monkey', corrected, the, 'Ape'] ;
+
+X = [the, 'Monkey', corrected, the, 'Monkey'] ;
+
+X = [the, 'Monkey', corrected, the, 'Human'] ;
+
+X = [the, 'Monkey', corrected, the, 'Pig'] ;
+
+X = [the, 'Monkey', corrected, a, 'Ape'] ;
+
+X = [the, 'Monkey', corrected, a, 'Monkey'] ;
+
+X = [the, 'Monkey', corrected, a, 'Human'] ;
+
+X = [the, 'Monkey', corrected, a, 'Pig'] ;
+
+X = [the, 'Monkey', corrected, that, 'Ape'] ;
+
+X = [the, 'Monkey', corrected, that, 'Monkey'] ;
+
+X = [the, 'Monkey', corrected, that, 'Human'] ;
+
+X = [the, 'Monkey', corrected, that, 'Pig'] ;
+
+X = [the, 'Monkey', corrected, this, 'Ape'] ;
+
+X = [the, 'Monkey', corrected, this, 'Monkey'] ;
+
+X = [the, 'Monkey', corrected, this, 'Human'] ;
+
+X = [the, 'Monkey', corrected, this, 'Pig'] ;
+
+X = [the, 'Monkey', corrected, that, 'Ape'] ;
+
+X = [the, 'Monkey', corrected, that, 'Monkey'] ;
+
+X = [the, 'Monkey', corrected, that, 'Human'] ;
+
+X = [the, 'Monkey', corrected, that, 'Pig'] ;
+
+X = [the, 'Monkey', corrected, them, 'Ape'] ;
+
+X = [the, 'Monkey', corrected, them, 'Monkey'] ;
+
+X = [the, 'Monkey', corrected, them, 'Human'] ;
+
+X = [the, 'Monkey', corrected, them, 'Pig'] ;
+
+X = [the, 'Monkey', trained, the, 'Ape'] ;
+
+X = [the, 'Monkey', trained, the, 'Monkey'] ;
+
+X = [the, 'Monkey', trained, the, 'Human'] ;
+
+X = [the, 'Monkey', trained, the, 'Pig'] ;
+
+X = [the, 'Monkey', trained, a, 'Ape'] ;
+
+X = [the, 'Monkey', trained, a, 'Monkey'] ;
+
+X = [the, 'Monkey', trained, a, 'Human'] ;
+
+X = [the, 'Monkey', trained, a, 'Pig'] ;
+
+X = [the, 'Monkey', trained, that, 'Ape'] ;
+
+X = [the, 'Monkey', trained, that, 'Monkey'] ;
+
+X = [the, 'Monkey', trained, that, 'Human'] ;
+
+X = [the, 'Monkey', trained, that, 'Pig'] ;
+
+X = [the, 'Monkey', trained, this, 'Ape'] ;
+
+X = [the, 'Monkey', trained, this, 'Monkey'] ;
+
+X = [the, 'Monkey', trained, this, 'Human'] ;
+
+X = [the, 'Monkey', trained, this, 'Pig'] ;
+
+X = [the, 'Monkey', trained, that, 'Ape'] ;
+
+X = [the, 'Monkey', trained, that, 'Monkey'] ;
+
+X = [the, 'Monkey', trained, that, 'Human'] ;
+
+X = [the, 'Monkey', trained, that, 'Pig'] ;
+
+X = [the, 'Monkey', trained, them, 'Ape'] ;
+
+X = [the, 'Monkey', trained, them, 'Monkey'] ;
+
+X = [the, 'Monkey', trained, them, 'Human'] ;
+
+X = [the, 'Monkey', trained, them, 'Pig'] ;
+
+X = [the, 'Human', taught, the, 'Ape'] ;
+
+X = [the, 'Human', taught, the, 'Monkey'] ;
+
+X = [the, 'Human', taught, the, 'Human'] ;
+
+X = [the, 'Human', taught, the, 'Pig'] ;
+
+X = [the, 'Human', taught, a, 'Ape'] ;
+
+X = [the, 'Human', taught, a, 'Monkey'] ;
+
+X = [the, 'Human', taught, a, 'Human'] ;
+
+X = [the, 'Human', taught, a, 'Pig'] ;
+
+X = [the, 'Human', taught, that, 'Ape'] ;
+
+X = [the, 'Human', taught, that, 'Monkey'] ;
+
+X = [the, 'Human', taught, that, 'Human'] ;
+
+X = [the, 'Human', taught, that, 'Pig'] ;
+
+X = [the, 'Human', taught, this, 'Ape'] ;
+
+X = [the, 'Human', taught, this, 'Monkey'] ;
+
+X = [the, 'Human', taught, this, 'Human'] ;
+
+X = [the, 'Human', taught, this, 'Pig'] ;
+
+X = [the, 'Human', taught, that, 'Ape'] ;
+
+X = [the, 'Human', taught, that, 'Monkey'] ;
+
+X = [the, 'Human', taught, that, 'Human'] ;
+
+X = [the, 'Human', taught, that, 'Pig'] ;
+
+X = [the, 'Human', taught, them, 'Ape'] ;
+
+X = [the, 'Human', taught, them, 'Monkey'] ;
+
+X = [the, 'Human', taught, them, 'Human'] ;
+
+X = [the, 'Human', taught, them, 'Pig'] ;
+
+X = [the, 'Human', corrected, the, 'Ape'] ;
+
+X = [the, 'Human', corrected, the, 'Monkey'] ;
+
+X = [the, 'Human', corrected, the, 'Human'] ;
+
+X = [the, 'Human', corrected, the, 'Pig'] ;
+
+X = [the, 'Human', corrected, a, 'Ape'] ;
+
+X = [the, 'Human', corrected, a, 'Monkey'] ;
+
+X = [the, 'Human', corrected, a, 'Human'] ;
+
+X = [the, 'Human', corrected, a, 'Pig'] ;
+
+X = [the, 'Human', corrected, that, 'Ape'] ;
+
+X = [the, 'Human', corrected, that, 'Monkey'] ;
+
+X = [the, 'Human', corrected, that, 'Human'] ;
+
+X = [the, 'Human', corrected, that, 'Pig'] ;
+
+X = [the, 'Human', corrected, this, 'Ape'] ;
+
+X = [the, 'Human', corrected, this, 'Monkey'] ;
+
+X = [the, 'Human', corrected, this, 'Human'] ;
+
+X = [the, 'Human', corrected, this, 'Pig'] ;
+
+X = [the, 'Human', corrected, that, 'Ape'] ;
+
+X = [the, 'Human', corrected, that, 'Monkey'] ;
+
+X = [the, 'Human', corrected, that, 'Human'] ;
+
+X = [the, 'Human', corrected, that, 'Pig'] ;
+
+X = [the, 'Human', corrected, them, 'Ape'] ;
+
+X = [the, 'Human', corrected, them, 'Monkey'] ;
+
+X = [the, 'Human', corrected, them, 'Human'] ;
+
+X = [the, 'Human', corrected, them, 'Pig'] ;
+
+X = [the, 'Human', trained, the, 'Ape'] ;
+
+X = [the, 'Human', trained, the, 'Monkey'] ;
+
+X = [the, 'Human', trained, the, 'Human'] ;
+
+X = [the, 'Human', trained, the, 'Pig'] ;
+
+X = [the, 'Human', trained, a, 'Ape'] ;
+
+X = [the, 'Human', trained, a, 'Monkey'] ;
+
+X = [the, 'Human', trained, a, 'Human'] ;
+
+X = [the, 'Human', trained, a, 'Pig'] ;
+
+X = [the, 'Human', trained, that, 'Ape'] ;
+
+X = [the, 'Human', trained, that, 'Monkey'] ;
+
+X = [the, 'Human', trained, that, 'Human'] ;
+
+X = [the, 'Human', trained, that, 'Pig'] ;
+
+X = [the, 'Human', trained, this, 'Ape'] ;
+
+X = [the, 'Human', trained, this, 'Monkey'] ;
+
+X = [the, 'Human', trained, this, 'Human'] ;
+
+X = [the, 'Human', trained, this, 'Pig'] ;
+
+X = [the, 'Human', trained, that, 'Ape'] ;
+
+X = [the, 'Human', trained, that, 'Monkey'] ;
+
+X = [the, 'Human', trained, that, 'Human'] ;
+
+X = [the, 'Human', trained, that, 'Pig'] ;
+
+X = [the, 'Human', trained, them, 'Ape'] ;
+
+X = [the, 'Human', trained, them, 'Monkey'] ;
+
+X = [the, 'Human', trained, them, 'Human'] ;
+
+X = [the, 'Human', trained, them, 'Pig'] ;
+
+X = [the, 'Pig', taught, the, 'Ape'] ;
+
+X = [the, 'Pig', taught, the, 'Monkey'] ;
+
+X = [the, 'Pig', taught, the, 'Human'] ;
+
+X = [the, 'Pig', taught, the, 'Pig'] ;
+
+X = [the, 'Pig', taught, a, 'Ape'] ;
+
+X = [the, 'Pig', taught, a, 'Monkey'] ;
+
+X = [the, 'Pig', taught, a, 'Human'] ;
+
+X = [the, 'Pig', taught, a, 'Pig'] ;
+
+X = [the, 'Pig', taught, that, 'Ape'] ;
+
+X = [the, 'Pig', taught, that, 'Monkey'] ;
+
+X = [the, 'Pig', taught, that, 'Human'] ;
+
+X = [the, 'Pig', taught, that, 'Pig'] ;
+
+X = [the, 'Pig', taught, this, 'Ape'] ;
+
+X = [the, 'Pig', taught, this, 'Monkey'] ;
+
+X = [the, 'Pig', taught, this, 'Human'] ;
+
+X = [the, 'Pig', taught, this, 'Pig'] ;
+
+X = [the, 'Pig', taught, that, 'Ape'] ;
+
+X = [the, 'Pig', taught, that, 'Monkey'] ;
+
+X = [the, 'Pig', taught, that, 'Human'] ;
+
+X = [the, 'Pig', taught, that, 'Pig'] ;
+
+X = [the, 'Pig', taught, them, 'Ape'] ;
+
+X = [the, 'Pig', taught, them, 'Monkey'] ;
+
+X = [the, 'Pig', taught, them, 'Human'] ;
+
+X = [the, 'Pig', taught, them, 'Pig'] ;
+
+X = [the, 'Pig', corrected, the, 'Ape'] ;
+
+X = [the, 'Pig', corrected, the, 'Monkey'] ;
+
+X = [the, 'Pig', corrected, the, 'Human'] ;
+
+X = [the, 'Pig', corrected, the, 'Pig'] ;
+
+X = [the, 'Pig', corrected, a, 'Ape'] ;
+
+X = [the, 'Pig', corrected, a, 'Monkey'] ;
+
+X = [the, 'Pig', corrected, a, 'Human'] ;
+
+X = [the, 'Pig', corrected, a, 'Pig'] ;
+
+X = [the, 'Pig', corrected, that, 'Ape'] ;
+
+X = [the, 'Pig', corrected, that, 'Monkey'] ;
+
+X = [the, 'Pig', corrected, that, 'Human'] ;
+
+X = [the, 'Pig', corrected, that, 'Pig'] ;
+
+X = [the, 'Pig', corrected, this, 'Ape'] ;
+
+X = [the, 'Pig', corrected, this, 'Monkey'] ;
+
+X = [the, 'Pig', corrected, this, 'Human'] ;
+
+X = [the, 'Pig', corrected, this, 'Pig'] ;
+
+X = [the, 'Pig', corrected, that, 'Ape'] ;
+
+X = [the, 'Pig', corrected, that, 'Monkey'] ;
+
+X = [the, 'Pig', corrected, that, 'Human'] ;
+
+X = [the, 'Pig', corrected, that, 'Pig'] ;
+
+X = [the, 'Pig', corrected, them, 'Ape'] ;
+
+X = [the, 'Pig', corrected, them, 'Monkey'] ;
+
+X = [the, 'Pig', corrected, them, 'Human'] ;
+
+X = [the, 'Pig', corrected, them, 'Pig'] ;
+
+X = [the, 'Pig', trained, the, 'Ape'] ;
+
+X = [the, 'Pig', trained, the, 'Monkey'] ;
+
+X = [the, 'Pig', trained, the, 'Human'] ;
+
+X = [the, 'Pig', trained, the, 'Pig'] ;
+
+X = [the, 'Pig', trained, a, 'Ape'] ;
+
+X = [the, 'Pig', trained, a, 'Monkey'] ;
+
+X = [the, 'Pig', trained, a, 'Human'] ;
+
+X = [the, 'Pig', trained, a, 'Pig'] ;
+
+X = [the, 'Pig', trained, that, 'Ape'] ;
+
+X = [the, 'Pig', trained, that, 'Monkey'] ;
+
+X = [the, 'Pig', trained, that, 'Human'] ;
+
+X = [the, 'Pig', trained, that, 'Pig'] ;
+
+X = [the, 'Pig', trained, this, 'Ape'] ;
+
+X = [the, 'Pig', trained, this, 'Monkey'] ;
+
+X = [the, 'Pig', trained, this, 'Human'] ;
+
+X = [the, 'Pig', trained, this, 'Pig'] ;
+
+X = [the, 'Pig', trained, that, 'Ape'] ;
+
+X = [the, 'Pig', trained, that, 'Monkey'] ;
+
+X = [the, 'Pig', trained, that, 'Human'] ;
+
+X = [the, 'Pig', trained, that, 'Pig'] ;
+
+X = [the, 'Pig', trained, them, 'Ape'] ;
+
+X = [the, 'Pig', trained, them, 'Monkey'] ;
+
+X = [the, 'Pig', trained, them, 'Human'] ;
+
+X = [the, 'Pig', trained, them, 'Pig'] ;
+
+X = [a, 'Ape', taught, the, 'Ape'] ;
+
+X = [a, 'Ape', taught, the, 'Monkey'] ;
+
+X = [a, 'Ape', taught, the, 'Human'] ;
+
+X = [a, 'Ape', taught, the, 'Pig'] ;
+
+X = [a, 'Ape', taught, a, 'Ape'] ;
+
+X = [a, 'Ape', taught, a, 'Monkey'] ;
+
+X = [a, 'Ape', taught, a, 'Human'] ;
+
+X = [a, 'Ape', taught, a, 'Pig'] ;
+
+X = [a, 'Ape', taught, that, 'Ape'] ;
+
+X = [a, 'Ape', taught, that, 'Monkey'] ;
+
+X = [a, 'Ape', taught, that, 'Human'] ;
+
+X = [a, 'Ape', taught, that, 'Pig'] ;
+
+X = [a, 'Ape', taught, this, 'Ape'] ;
+
+X = [a, 'Ape', taught, this, 'Monkey'] ;
+
+X = [a, 'Ape', taught, this, 'Human'] ;
+
+X = [a, 'Ape', taught, this, 'Pig'] ;
+
+X = [a, 'Ape', taught, that, 'Ape'] ;
+
+X = [a, 'Ape', taught, that, 'Monkey'] ;
+
+X = [a, 'Ape', taught, that, 'Human'] ;
+
+X = [a, 'Ape', taught, that, 'Pig'] ;
+
+X = [a, 'Ape', taught, them, 'Ape'] ;
+
+X = [a, 'Ape', taught, them, 'Monkey'] ;
+
+X = [a, 'Ape', taught, them, 'Human'] ;
+
+X = [a, 'Ape', taught, them, 'Pig'] ;
+
+X = [a, 'Ape', corrected, the, 'Ape'] ;
+
+X = [a, 'Ape', corrected, the, 'Monkey'] ;
+
+X = [a, 'Ape', corrected, the, 'Human'] ;
+
+X = [a, 'Ape', corrected, the, 'Pig'] ;
+
+X = [a, 'Ape', corrected, a, 'Ape'] ;
+
+X = [a, 'Ape', corrected, a, 'Monkey'] ;
+
+X = [a, 'Ape', corrected, a, 'Human'] ;
+
+X = [a, 'Ape', corrected, a, 'Pig'] ;
+
+X = [a, 'Ape', corrected, that, 'Ape'] ;
+
+X = [a, 'Ape', corrected, that, 'Monkey'] ;
+
+X = [a, 'Ape', corrected, that, 'Human'] ;
+
+X = [a, 'Ape', corrected, that, 'Pig'] ;
+
+X = [a, 'Ape', corrected, this, 'Ape'] ;
+
+X = [a, 'Ape', corrected, this, 'Monkey'] ;
+
+X = [a, 'Ape', corrected, this, 'Human'] ;
+
+X = [a, 'Ape', corrected, this, 'Pig'] ;
+
+X = [a, 'Ape', corrected, that, 'Ape'] ;
+
+X = [a, 'Ape', corrected, that, 'Monkey'] ;
+
+X = [a, 'Ape', corrected, that, 'Human'] ;
+
+X = [a, 'Ape', corrected, that, 'Pig'] ;
+
+X = [a, 'Ape', corrected, them, 'Ape'] ;
+
+X = [a, 'Ape', corrected, them, 'Monkey'] ;
+
+X = [a, 'Ape', corrected, them, 'Human'] ;
+
+X = [a, 'Ape', corrected, them, 'Pig'] ;
+
+X = [a, 'Ape', trained, the, 'Ape'] ;
+
+X = [a, 'Ape', trained, the, 'Monkey'] ;
+
+X = [a, 'Ape', trained, the, 'Human'] 
+
+Yes
+?- exit
+|    .
+ERROR: Undefined procedure: exit/0
+ERROR:     However, there are definitions for:
+ERROR:         exit/2
+
+No
+?- halt.
+altair - kfosmire - 03 > exit
+exit
+
+script done on Fri Apr 18 18:38:28 2014

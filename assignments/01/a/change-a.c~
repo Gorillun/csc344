@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+
+main()
+{/*
+	if(argc>1)
+	{
+		if(*argv[0]=='-u')
+		{
+			printf("good");
+		}
+	}
+	else*/
+		printf("bad");
+	return 0;
+} 

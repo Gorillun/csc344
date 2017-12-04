@@ -1,0 +1,251 @@
+/* Keith Fosmire
+   Assignment 2C
+   Due 7 March 2014
+   *This program accepts -n -b and -m for numbers base and max range respectively
+   *Using the list class to print part B out in reverse, normal, coordinate and random orders
+   *All other parts of this program are exactly the same as part B
+*/
+
+#include <iostream>
+#include<cstring>
+#include<sstream>
+#include<stdlib.h>
+#include<list>
+#include<utility>
+#include<vector>
+#include "ids.h"
+using namespace std;
+using namespace ids;
+
+class Bogie
+{
+  private:
+     
+     list< pair <int,int> > xy;
+     vector<string> pts;
+	 /*called by the constructor to set all ids*/
+     void setID()
+     {
+       int numbers = id.n;
+       int base = id.b;
+       string numeros[10]={"0","1","2","3","4","5","6","7","8","9"};
+       string ids[numbers];
+       string alphas[26] = {"A","B","C","D","E","F","G",
+			  "H","I","J","K","L","M","N",
+			  "O","P","Q","R","S","T","U",
+			  "W","X","Y","Z"};
+       int x=0;
+       int i=0;
+		/*setting ids per the users data*/
+       while(i<numbers)
+		{
+			int a=0;
+			int j=0;
+			while(a<base&&i<numbers)
+			{ 	/*checking and setting the appropriate digits*/
+				if(a<10&&x==0)
+				{
+					pts.push_back(numeros[a]);
+				}
+				else if(a<10)
+				{
+					pts.push_back( numeros[x]+numeros[a]);
+				}
+				else if(x==0)
+				{
+					pts.push_back(alphas[j]);
+					++j;
+				}
+				else
+				{
+					pts.push_back(numeros[x]+alphas[j]);
+					++j;
+				}
+				++i;
+				++a;
+			}
+			++x;
+		}/*end of loop*/
+     }
+	 /*called by constructor to set random coordinates*/
+  void coordinates()
+  {
+    srand(time(0));
+    int y =0;
+    int max = id.m;
+    int min = (2*max)+1;
+    int count = id.n;
+    while(y<count)
+		{ 	
+			int first = rand()%min + (-max);
+			int second = rand()%min + (-max);
+			xy.push_back( make_pair(first,second) );
+			++y;
+		}
+  }
+  public:
+	/*constructor and get methods*/
+     Bogie()
+     {
+       setID();
+       coordinates();
+     }
+	 /*returns pts*/
+     vector<string> getID()
+     {
+       return pts;
+     }
+	 /*returns x*/
+      vector<int> getX()
+     {
+       list< pair<int,int> >:: iterator it = xy.begin();
+       vector<int> xCor;
+       while(it != xy.end())
+		{
+			xCor.push_back((*it).first);
+			++it;
+		}
+       return xCor;
+     }
+	 /*returns y*/
+     vector<int> getY()
+     {
+       list< pair<int,int> >:: iterator it = xy.begin();
+       vector<int> yCor;
+       while(it != xy.end())
+		{
+			yCor.push_back((*it).second);
+			++it;
+		}
+       return yCor;
+     }
+};
+/***************************************************************************************************************
+****************************************************************************************************************
+***********************************MAIN**********************************************************************/
+int main(int argc, char *argv[])
+{
+  vector<string> inPts;
+  vector<int> xCo;
+  vector<int> yCo;
+  int number, base;
+  /*ensuring proper number of elements*/
+  if(argc<4)
+    {
+      cout <<"Expected -n number -b base -m min/max random number"<<endl;
+    }
+      int x=1;
+      while(x<argc)
+		{
+			string cmd=argv[x];
+			if(cmd.compare("-n")==0)
+				{
+					id.n=atoi(argv[x+1]);
+					++x;
+				}
+			else if(cmd.compare("-b")==0)
+				{
+					id.b=atoi(argv[x+1]);
+					++x;
+				}
+			else if(cmd.compare("-m")==0)
+				{
+					id.m=atoi(argv[x+1]);
+					++x;
+				}
+			else
+				++x;
+		}      
+  /*instantiating the bogie class and printing to screen*/  
+  Bogie bog;
+  inPts=bog.getID();
+  xCo=bog.getX();
+  yCo=bog.getY();
+  list< pair<string,int> > bogies;
+  vector<int>::iterator itY = yCo.begin();
+  vector<int>::iterator itX = xCo.begin();
+  vector<string>::iterator it =inPts.begin();
+  /*setting a vector with the x int for manipulating */
+  while(it != inPts.end())
+    {
+      int xC=*itX;
+      int yC=*itY;
+      stringstream ys;
+      stringstream xs;
+      ys<<yC;
+      xs<<xC;
+      string corStr;
+      corStr=*it+","+xs.str()+","+ys.str()+", ";
+      bogies.push_back( make_pair(corStr,xC));
+      ++itX;++it;++itY;
+    }
+  list< pair<string,int> >::iterator itStr=bogies.begin();
+  /*regular print in numeric order*/
+  cout<<"Normal Order:\n";
+  while(itStr != bogies.end())
+    {
+      cout<<(*itStr).first;
+      ++itStr;
+    }
+  cout<<"\n";
+  /*using reverse iterator to print in reverse*/
+  list< pair<string,int> >::reverse_iterator itrStr=bogies.rbegin();
+  cout<<"Reverse Order:\n";
+  while(itrStr != bogies.rend())
+    {
+      cout<<(*itrStr).first;
+      ++itrStr;
+    }
+  cout<<"\n";
+  /*using the x int from the pairs to determine order by coordinates*/
+  cout<<"Order of Coordinates:\n";
+  for(int n =0;n<=id.m;++n)
+    {
+      list< pair<string,int> >::iterator nit =bogies.begin();
+      while(nit != bogies.end())
+		{
+			int t=(*nit).second;
+			if((t==n||t==(-n)))
+			{
+				cout<<(*nit).first;  
+			}
+			++nit;
+		}
+    }
+  cout<<"\n";
+  list< pair<string,int> >::iterator randIt=bogies.begin();
+  list<string> lftHnd;
+  list<string> rtHnd;
+  srand(time(0));
+  /*using lfthand and rthand to seperate the list using random -1 or 0*/
+  while(randIt != bogies.end())
+    {
+        int r =rand()%2 + (-1);
+		if(r==0)
+			{
+				rtHnd.push_back((*randIt).first);
+			}
+		else
+			{
+				lftHnd.push_back((*randIt).first);
+			}
+		++randIt;
+    }
+  cout<<"In Random Order:\n";
+  /*using reverse order and regular iterator to shuffle the lists*/
+  list<string>::reverse_iterator rtIt=rtHnd.rbegin();
+  list<string>::iterator lftIt=lftHnd.begin();
+  while(rtIt != rtHnd.rend())
+    {
+      cout<<*rtIt;
+      ++rtIt;
+    }
+  while(lftIt != lftHnd.end())
+    {
+      cout<<*lftIt;
+      ++lftIt;
+    }
+  cout<<"\n";
+  return 0;
+    
+}

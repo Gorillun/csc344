@@ -1,0 +1,26 @@
+/*
+
+*/
+sent --> np, vp.
+
+np --> det, noun.
+vp --> verb, op.
+op --> det, obj.
+
+obj --> noun.
+
+det --> [the].
+det --> [a].
+det --> [that].
+det --> [this].
+det --> [that].
+det --> [them].
+
+noun --> ['Ape'].
+noun --> ['Monkey'].
+noun --> ['Human'].
+noun --> ['Pig'].
+
+verb --> [taught].
+verb --> [corrected].
+verb --> ['trained'].

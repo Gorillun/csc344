@@ -1,0 +1,102 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include <ctype.h>
+#include <string.h>
+#include <math.h>
+
+#define WRITEONLY "w"
+#define READONLY "r"
+
+
+int roundIt(float d)
+{	
+	int out;
+	if(d<0)
+	{
+		out = d-.5;
+	}
+	else
+	{
+		out = d+.5;
+	}
+	
+	return out;
+}
+
+rotate(int in[], int c)
+{	
+    int count=c;
+	if(count<2)
+	{
+	   printf("\nContent-type: text/plain\n\n");
+	   printf(" 0\n");
+	}
+	else
+	{
+	int i=0;
+	int j=0;
+	int k=0;
+	int points[100];
+	double temp[count];
+	while(k<100)
+	{
+		points[k]=0;
+		++k;
+	}
+	k=0;
+	while(k<c)
+	{
+		points[k]=in[k];
+		++k;
+	}
+	k=0;
+	while(k<count)
+	{
+		temp[k]=0;
+		++k;
+	}
+	float theta = (points[0]*3.14)/180;
+	for(i=1;i<count;++i)
+	{
+		if(i%2!=0)
+		  temp[i-1]=(points[i]*cos(theta))-(points[i+1]*sin(theta));
+		else
+		  temp[i-1]=(points[i-1]*sin(theta))-(points[i]*cos(theta));
+		
+	}
+	printf("Content-type: text/plain\n\n");
+	for(j=0;j<count-2;++j)
+	{
+		printf("    %i, ",roundIt(temp[j]));
+		
+	}
+	printf("   %i\n",roundIt(temp[j]));
+	}
+}
+int main(int argc, char *argv[])
+{
+	int one[100];
+	int i=0;
+	int j=0;
+	int count=0;
+	for(j=0;j<100;++j)
+	{
+		one[j]=0;
+	}
+	FILE *fp;
+	if(argv[1]!=NULL)
+	{
+		fp = fopen(argv[1],READONLY);
+       
+			
+			while(fscanf(fp,"%i ",&one[i])!= EOF)
+			{
+				++i;
+				++count;
+			}
+		if(fclose(fp)==EOF)
+			printf("cannot close\n");
+		
+	}
+	rotate(one, count);
+}
